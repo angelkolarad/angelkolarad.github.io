@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+  <title>Sending Email Using Python and smtplib</title>
+
+  <meta name="author" content="Angel Kolarad" />
+
+  
+  <meta name="description" content="Quick HowTo with Sample Python Code">
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Angel Kolarad - Arts & Sports Club" href="/feed.xml" />
+
+  
+
+  
+  
+
+  
+    
+      
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" />
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Manjari:400,700&display=swap&subset=malayalam" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,400italic,700,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Rubik:400,400italic,700,700italic" />
+    
+  
+
+  
+
+  
+
+  
+
+    <!-- Facebook OpenGraph tags -->
+  
+
+  
+  <meta property="og:title" content="Sending Email Using Python and smtplib" />
+  
+
+   
+  <meta property="og:description" content="Quick HowTo with Sample Python Code">
+  
+
+
+  <meta property="og:type" content="website" />
+
+  
+  <meta property="og:url" content="http://0.0.0.0:4000/housekeeping/2019-06-13-Sending%20Email%20Using%20Python%20and%20smtplib%20%E2%80%93%20Quick%20HowTo/" />
+  <link rel="canonical" href="http://0.0.0.0:4000/housekeeping/2019-06-13-Sending%20Email%20Using%20Python%20and%20smtplib%20%E2%80%93%20Quick%20HowTo/" />
+  
+
+  
+  <meta property="og:image" content="http://0.0.0.0:4000/img/avatar-icon.png" />
+  
+
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+  <meta name="twitter:title" content="Sending Email Using Python and smtplib" />
+  
+
+  
+  <meta name="twitter:description" content="Quick HowTo with Sample Python Code">
+  
+
+  
+  <meta name="twitter:image" content="http://0.0.0.0:4000/img/avatar-icon.png" />
+  
+
+  
+
+</head>
+
+
+  <body>
+
+    
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+        <a class="navbar-brand" href="http://0.0.0.0:4000">Angel Kolarad</a>
+      
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/./">Home</a>
+
+          </li>
+        
+        
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/about">About</a>
+
+          </li>
+        
+        
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/#">Activities</a>
+
+          </li>
+        
+        
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/videos">Videos</a>
+
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+  <div id="header-big-imgs" data-num-img=1
+    
+	  
+	  
+	    
+		  data-img-src-1="/img/sending-email-using-python-and-smtplib-quick-howto-1024x640.jpeg"
+		
+	  
+    
+  ></div>
+
+
+<header class="header-section has-img">
+
+<div class="big-img intro-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Sending Email Using Python and smtplib</h1>
+		  
+		    
+			<h2 class="post-subheading">Quick HowTo with Sample Python Code</h2>
+			
+		  
+		  
+		  
+		  <span class="post-meta">Posted on </span>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class='img-desc'></span>
+</div>
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Sending Email Using Python and smtplib</h1>
+		  
+		    
+			<h2 class="post-subheading">Quick HowTo with Sample Python Code</h2>
+			
+		  
+		  
+		  
+		  <span class="post-meta">Posted on </span>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      
+
+      <article role="main" class="blog-post">
+        <p>We can easily send email from python script using smtplib module, which defines an SMTP client session object that can be used to send mail to any Internet machine with an SMTP or ESMTP listener daemon.</p>
+
+<p><a href="https://www.techbeatly.com/2019/06/sending-email-using-python-and-smtplib-quick-howto.html/">See Full Article</a></p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          Tags:
+          
+          
+            <a href="/tags#python">python</a>
+          
+            <a href="/tags#email">email</a>
+          
+            <a href="/tags#smtplib">smtplib</a>
+          
+          
+        </div>
+      
+
+      
+
+      <ul class="pager blog-pager">
+        
+        
+      </ul>
+
+      
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links"><li><a href="https://www.facebook.com/AngelKolarad" title="Facebook"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">Facebook</span>
+              </a>
+            </li><li><a href="" title=""><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only"></span>
+              </a>
+            </li><li><a href="https://www.youtube.com/channel/UCqyWH6lwaE95sy5ADYuWPBg?view_as=subscriber" title="YouTube"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">YouTube</span>
+              </a>
+            </li><li><a href="mailto:contact@angelkolarad.com" title="Email me"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">Email me</span>
+              </a>
+            </li></ul>
+      <p class="copyright text-muted">
+      Angel Kolarad
+      &nbsp;&bull;&nbsp;
+      2023
+
+      
+      &nbsp;&bull;&nbsp;
+      <a href="http://0.0.0.0:4000">angelkolarad.com</a>
+      
+
+      
+      </p>
+          <!-- Please don't remove this, keep my open source work credited :) -->
+    <!-- <p class="theme-by text-muted">
+      <a href="https://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+    </p> -->
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
+
+
+  
+  </body>
+</html>

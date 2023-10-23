@@ -17,10 +17,10 @@ facebook:
   baseURL: "https://www.facebook.com/AngelKolarad"
   icon: "fa-facebook"
 
-github:
-  name: "GitHub"
-  baseURL: "https://github.com/angelkolarad"
-  icon: "fa-github"
+# github:
+#   name: "GitHub"
+#   baseURL: "https://github.com/angelkolarad"
+#   icon: "fa-github"
 
 twitter:
   name: "Twitter"
